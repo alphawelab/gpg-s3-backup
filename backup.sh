@@ -3,6 +3,10 @@
 set -e
 set -o pipefail
 
+if [ "${S3_S3V4}" = "yes" ]; then
+    aws configure set default.s3.signature_version s3v4
+fi
+
 if [ "${S3_ACCESS_KEY_ID}" = "**None**" ]; then
   echo "You need to set the S3_ACCESS_KEY_ID environment variable."
   exit 1
