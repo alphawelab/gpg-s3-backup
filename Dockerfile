@@ -2,7 +2,7 @@ FROM alpine
 
 RUN apk update && \
     apk upgrade && \
-    apk add --no-cache python py-pip gnupg && \
+    apk add --no-cache python3 py-pip jq gnupg && \
     pip install --upgrade pip && \
     pip install awscli && \
     apk del py-pip && \
