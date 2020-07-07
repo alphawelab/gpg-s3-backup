@@ -1,7 +1,7 @@
 #! /bin/sh
 
-set -e
-set -o pipefail
+# set -e
+# set -o pipefail
 
 if [ "${S3_S3V4}" = "yes" ]; then
     aws configure set default.s3.signature_version s3v4

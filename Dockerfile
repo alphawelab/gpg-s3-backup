@@ -2,7 +2,7 @@ FROM alpine
 
 RUN apk update \
         && apk upgrade \
-        && apk add --no-cache python py-pip jq curl gnupg && \
+        && apk add --no-cache python py-pip jq curl gnupg vim && \
         pip install --upgrade pip && \
         pip install awscli && \
         apk del py-pip && \
@@ -18,5 +18,3 @@ S3_ENDPOINT **None** \
 S3_S3V4 "yes"
 
 ADD backup.sh backup.sh
-
-CMD ["sh", "backup.sh"]
